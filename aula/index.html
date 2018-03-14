@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Formulário</h2>
+    <form action="" method="post">
+
+        <label>Nome:</label>
+        <input type="text" 
+            name="username"
+            maxlength="20"
+            size="20"
+            placeholder="Digite seu nome">
+
+        <br/><br/>
+
+        <label>Senha:</label>
+        <input type="password"
+            name="password"
+            maxlegth="8"
+            placeholder="Digite sua senha"
+            required>
+
+        <br/><br/>
+
+        <label>E-mail:</label>
+        <input type="email"
+            name="email"
+            placeholder="Digite seu e-mail">        
+
+        <br/><br/>            
+
+        <label>Escolha uma cor:</label>        
+        <input type="color"
+            value="cor">
+
+        <br/><br/>
+
+        <label>Escolha um curso</label>
+        <br/>
+        <input type="checkbox"
+            name="Python">Python
+        <br/>
+        <input type="checkbox" 
+            name="Java">Java
+        <br/>
+        <input type="checkbox" 
+            name="C#">C#
+
+        <br/><br/>
+
+        <input type="radio"     
+            name="Sexo" 
+            value="Masculino">Masculino
+        <br/>           
+        <input type="radio"     
+            name="Sexo" 
+            value="Feminino">Feminino
+    
+        <br/><br/>
+
+        <label>Escolha o estado:</label>
+        <select>
+            <option name="estado" value="SP">São Paulo</option>
+            <option name="estado" value="RJ">Rio de Janeiro</option>
+            <option name="estado" value="MG">Minas Gerais</option>
+            <option name="estado" value="BA">Bahia</option>
+        </select>
+
+        <br/><br/>
+
+        <label>Observações:</label>
+        <br/>
+        <textarea name="obs"></textarea>
+
+        <br/><br/>
+
+        <input type="submit"
+            value="Salvar">
+        
+    </form>
+</body>
+</html>
