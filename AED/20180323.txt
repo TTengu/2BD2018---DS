@@ -1,0 +1,72 @@
+import pandas as pd
+idades =pd.Series([45,42,38,51], name="idade", index=["Rogério","Martha","Racquel","Joel"])
+idades
+
+import pandas as pd
+df=pd.DataFrame({"Crescimento":[0.5,0.7,1.2],"Nome":["Paulo","Jorge","Renato"]})
+df
+
+import pandas as pd
+
+usuarios = pd.DataFrame([{"Nome":"Roberto","Idade":34,"Altura":1.80,"Peso":78},{"Nome":"Nair","Idade":38,"Altura":1.69,"Peso":55},{"Nome":"Lilian","Idade":34,"Altura":1.61,"Peso":59},{"Nome":"Claudia","Idade":36,"Altura":1.55,"Peso":50},{"Nome":"Marcelo","Idade":32,"Altura":1.76,"Peso":85},{"Nome":"Joel","Idade":33,"Altura":1.68,"Peso":72},{"Nome":"Olivia","Idade":37,"Altura":1.58,"Peso":62},{"Nome":"Ana","Idade":33,"Altura":1.69,"Peso":65},{"Nome":"Luciana","Idade":36,"Altura":1.61,"Peso":1.62},{"Nome":"Renan","Idade":31,"Altura":1.81,"Peso":92},{"Nome":"Josue","Idade":35,"Altura":1.71,"Peso":69},{"Nome":"Carlos","Idade":39,"Altura":1.75,"Peso":82},{"Nome":"Wagner","Idade":38,"Altura":1.73,"Peso":75}
+             ])
+teste = pd.DataFrame([{"Nome":"Teste","Idade":100,"Altura":1.00,"Peso":987}])
+usuarios.describe()
+
+import pandas as pd
+df = pd.read_csv('C:/Users/Aluno.sala30509/Downloads/Estimativa_Populacional_Brasil_2015.csv',sep=";",encoding='latin1')
+
+p1=0
+p2=0
+p3=0
+p4=0
+p5=0
+p6=0
+for x in df["Total"]:
+    if x <= 5000:
+        p1+=1
+    elif x <= 10000:
+        p2 +=1
+    elif x <= 50000:
+        p3 +=1
+    elif x <= 100000:
+        p4 += 1
+    elif x <= 500000:
+        p5 += 1
+    else:
+        p6 += 1
+
+m1=p1*100/df.shape[0]
+m2=p2*100/df.shape[0]
+m3=p3*100/df.shape[0]
+m4=p4*100/df.shape[0]
+m5=p5*100/df.shape[0]
+m6=p6*100/df.shape[0]
+print("Com até 5 mil habitantes","%.2f"%m1,"%","\nCom até 10 mil habitantes","%.2f"%m2,"%",
+      "\nCom até 50 mil habitantes","%.2f"%m3,"%","\nCom até 100 mil habitantes","%.2f"%m4,"%",
+      "\nCom até 500 mil habitantes","%.2f"%m5,"%","\nCom mais de 500 mil habitantes","%.2f"%m6,"%")
+
+
+
+import pandas as pd
+
+df = pd.read_csv('C:/Users/Aluno.sala30509/Downloads/Producao_ambulatorial_SUS-Jan_2018_Brasil.csv',sep=";",encoding='latin1')
+
+#valorApresentado = df["Valor_apresentado"].mean()
+medQtd_aprovada = df["Qtd_aprovada"].mean()
+stdQtd_aprovada = df["Qtd_aprovada"].std()
+medValor_aprovado = df["Valor_aprovado"]
+#stdValor_aprovado = df["Valor_aprovado"].std()
+
+for x in df["Valor_aprovado"]:
+    if x != float:
+        df["Valor_aprovado"].drop(x)
+
+
+#print("Quantidade Aprovada\nTendencia Central:%.2f"%medQtd_aprovada,"\nDispersão:%.2f"%stdQtd_aprovada)
+
+desc = pd.DataFrame({"":"Quantidade Aprovada","Tendencia Central":["%.2f"%medQtd_aprovada],"Dispersão":["%.2f"%stdQtd_aprovada]})
+desc
+
+#df["Valor_aprovado"].drop(100                     )
+
