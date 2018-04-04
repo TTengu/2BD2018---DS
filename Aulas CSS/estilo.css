@@ -1,0 +1,13 @@
+body{background-image: url(Pinguins.jpg);}
+p.formato1{text-align: center; color: #946825;}
+p.formato2{text-align: right; color: #114488;}
+.formato3{color: #1f4004; font-family: Courier New;}
+p#esquerdo{text-align: left; color= white;}
+h1,h2,h3{
+	color: #ddee00; background: white;
+	font-family: Impact;
+	font-size: 60px;
+}
+a:link{color: white;}
+a:visited{color: yellow;}
+a:hover{color:pink;}
