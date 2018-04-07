@@ -1,5 +1,5 @@
 import pandas as pd
-idades =pd.Series([45,42,38,51], name="idade", index=["RogÈrio","Martha","Racquel","Joel"])
+idades =pd.Series([45,42,38,51], name="idade", index=["Rog√©rio","Martha","Racquel","Joel"])
 idades
 
 import pandas as pd
@@ -42,31 +42,29 @@ m3=p3*100/df.shape[0]
 m4=p4*100/df.shape[0]
 m5=p5*100/df.shape[0]
 m6=p6*100/df.shape[0]
-print("Com atÈ 5 mil habitantes","%.2f"%m1,"%","\nCom atÈ 10 mil habitantes","%.2f"%m2,"%",
-      "\nCom atÈ 50 mil habitantes","%.2f"%m3,"%","\nCom atÈ 100 mil habitantes","%.2f"%m4,"%",
-      "\nCom atÈ 500 mil habitantes","%.2f"%m5,"%","\nCom mais de 500 mil habitantes","%.2f"%m6,"%")
+print("Com at√© 5 mil habitantes","%.2f"%m1,"%","\nCom at√© 10 mil habitantes","%.2f"%m2,"%",
+      "\nCom at√© 50 mil habitantes","%.2f"%m3,"%","\nCom at√© 100 mil habitantes","%.2f"%m4,"%",
+      "\nCom at√© 500 mil habitantes","%.2f"%m5,"%","\nCom mais de 500 mil habitantes","%.2f"%m6,"%")
 
 
 
 import pandas as pd
 
-df = pd.read_csv('C:/Users/Aluno.sala30509/Downloads/Producao_ambulatorial_SUS-Jan_2018_Brasil.csv',sep=";",encoding='latin1')
+df = pd.read_csv('C:/Users/Aluno.sala30510/Downloads/Producao_ambulatorial_SUS-Jan_2018_Brasil.csv',sep=";",encoding='latin1')
 
 #valorApresentado = df["Valor_apresentado"].mean()
-medQtd_aprovada = df["Qtd_aprovada"].mean()
-stdQtd_aprovada = df["Qtd_aprovada"].std()
+medQtd_aprovada = []
+'''stdQtd_aprovada = df["Qtd_aprovada"].std()
 medValor_aprovado = df["Valor_aprovado"]
-#stdValor_aprovado = df["Valor_aprovado"].std()
-
+#stdValor_aprovado = df["Valor_aprovado"].std()'''
+''''''
 for x in df["Valor_aprovado"]:
-    if x != float:
-        df["Valor_aprovado"].drop(x)
-
-
-#print("Quantidade Aprovada\nTendencia Central:%.2f"%medQtd_aprovada,"\nDispers„o:%.2f"%stdQtd_aprovada)
-
-desc = pd.DataFrame({"":"Quantidade Aprovada","Tendencia Central":["%.2f"%medQtd_aprovada],"Dispers„o":["%.2f"%stdQtd_aprovada]})
+    if x != '-':
+        medQtd_aprovada.append(str(x).replace(',','.'))
+        '''
+desc = pd.DataFrame({"":"Quantidade Aprovada","Tendencia Central":["%.2f"%medQtd_aprovada],"Dispers√£o":["%.2f"%stdQtd_aprovada]})
 desc
-
-#df["Valor_aprovado"].drop(100                     )
+        '''
+T2 = list(map(int, medQtd_aprovada))
+print(T2)
 
