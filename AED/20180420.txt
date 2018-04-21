@@ -1,0 +1,9 @@
+import pandas as pd
+
+df = pd.read_csv('C:/Users/Aluno.SALA30511/Downloads/Tuberculose_Brasil_Dez_2015.csv',sep=',',encoding='latin1')
+#df.dtypes
+
+df.Regiao = df.Regiao.astype(str)
+df.Hiperten_Nao_acomp = pd.to_numeric(df.Hiperten_Nao_acomp,errors='coerce')
+
+df.groupby(['Regiao'])['Hiperten_Nao_acomp'].mean()
