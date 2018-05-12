@@ -1,0 +1,21 @@
+import pandas as pd
+import scipy.stats as sp
+
+data = {'A': [200, 18], 'B': [138,23]} 
+
+df = pd.DataFrame(data)
+
+df = sp.chi2_contingency(df)
+
+df
+
+import pandas as pd
+import scipy.stats as sp
+
+data = {'A': [40,44], 'B': [102, 54]} 
+
+df = pd.DataFrame(data)
+
+df = sp.chi2_contingency(df)
+
+df
